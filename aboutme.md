@@ -1,16 +1,17 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: About Me
+subtitle: Software Engineer
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+I'm Sahil! I'm a 3rd-year CS major at The University of Texas at Austin.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+### Work Experience
 
-What else do you need?
+- Incoming Software Engineer Intern @ Yext (Summer 2019)
+- Software Engineer Intern @ JP Morgan (Summer 2018)
+- Software Engineer Intern @ vAuto-Cox Automotive (Summer 2017)
 
-### my history
+### Extracurriculars
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+- Vice President of Membership and Communications for UT Seva Charities, the largest South Asian charity at The University of Texas
