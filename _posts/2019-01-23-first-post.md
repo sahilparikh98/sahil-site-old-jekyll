@@ -2,7 +2,7 @@
 layout: post
 title: UDP vs TCP for live video streaming
 subtitle: It's not as hard to pick as you think
-bigimg: /img/network.jpg
+bigimg: /img/network2.jpg
 tags: [class]
 comments: true
 ---
