@@ -54,9 +54,33 @@ for course in gradebooks:
 ```
 Now, this looks very similar to the simple version of this that we did! We want to take what we're appending and put it in the front, and then put the for loop afterwards. We're appending `max(gradebooks[course].values())`, and the for loop is `for course in gradebooks`. It's just that simple:
 ```python
-scores = [max(gradebooks[key].values()) for key in gradebooks]
+scores = [max(gradebooks[course].values()) for course in gradebooks]
 ```
 Now, we just pass it into the `max()` function.
 ```python
-max_overall_score = max([max(gradebooks[key].values()) for key in gradebooks])
+max_overall_score = max([max(gradebooks[course].values()) for course in gradebooks])
 ```
+Now we move onto the more involved stuff. We're going to use the same concept for list building and use it to build a dictionary. It's not much rougher. The way we normally populate a dictionary from another dictionary is this:
+```python
+old_d = {'one': 1,'two': 2}
+new_d = {}
+for key in old_d:
+  new_d[key] = old_d[key]
+```
+But it's equivalent to say:
+```python
+old_d = {'one': 1,'two': 2}
+new_d = {key: old_d[key] for key in old_d}
+```
+See how similar this is to the list building concept? Instead of taking what we're appending and putting it first, we supply the mapping first (`key: value`). So since we were putting `key` into `new_d` with the value from `old_d`, it shows that in this case, the format is `{key that goes in new dict: value from something for key in old dict}`. We'll use this in a very standard way for question 2.  
+Question 2 says to build a dictionary in one line that contains the max scores for each class. In a way, we've already done a lot of the groundwork in Q1! In Q1, we build a list of all the max scores, and get the max out of that. So we know how to get the max score for a specific class, which is `max(gradebooks[course].values())` Now, instead of building a list, we'll build a dictionary, and map the course to that value. Let's do it the normal way first:
+```python
+max_score_dict = {}
+for course in gradebooks:
+  max_score_dict[course] = max(gradebooks[course].values())
+```
+Now, we can turn it into a one-liner! The mapping needs the key that goes into the new dictionary, which is `course` and the value that goes in, which is `max(gradebooks[course].values())`, so the mapping looks like `course: max(gradebooks[course].values())`, which is what we're putting into the dictionary. So the mapping goes first, and then the for loop:
+```python
+max_score_dict = {course: max(gradebooks[course].values()) for course in gradebooks}
+```
+We finished Q2! Now onto the hardest part, which combines all of these ideas and also adds a new twist.
