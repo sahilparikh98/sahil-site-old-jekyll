@@ -24,8 +24,8 @@ However, `gradebooks.values()` returns the values, which in this case would be t
 {'James': 89, 'Charles': 100, 'Bryn': 69, 'Alice': 100}, 
 {'Troy': 93, 'James':100, 'Charles':88}]
 ```
-This can't be compared in the `max()` function. What it needs is items that are comparable. How about numbers? Those seem pretty comparable to me. How do I turn all of that into a set of numbers? And in one line? Are you overwhelmed?   
-It's not a huge issue, because Python has really powerful list builders.    
+This can't be compared in the `max()` function. What it needs is items that are comparable. How about numbers? Those seem pretty comparable to me. How do I turn all of that into a set of numbers? And in one line? Are you overwhelmed? It's not a huge issue, because Python has really powerful feature called **list comprehension**.  
+
 We're going to use Python's list comprehension, which allows us to put values into a list based on some other iterable. The list building concept says that this:
 ```python
 l = ['1', '2']
@@ -38,7 +38,8 @@ is equivalent to:
 l = ['1', '2']
 scores = [num for num in l]
 ```
-It makes sense if you read it backwards. Let's look at the for loop. This is going to go through every value in `l` and call it num. Then, num is appended. So basically, the statement is `[append num for num in list]`. Make sense? You take what you're appending and put it in the front, and then put the for loop afterwards. This is essentially how the list building syntax works. We'll see how similar it is for dicts in a bit.    
+It makes sense if you read it backwards. Let's look at the for loop. This is going to go through every value in `l` and call it num. Then, num is appended. So basically, the statement is `[append num for num in list]`. Make sense? You take what you're appending and put it in the front, and then put the for loop afterwards. This is essentially how the list building syntax works. We'll see how similar it is for dicts in a bit.  
+
 Now let's translate this for the first problem, which is getting the max of all the scores. What we want to do, is make a list of the max scores for each course, and then pass that into the `max()` function, and it'll get the max out of the list. How do I build that list? First, let's do it the way we know:
 ```python
 scores = []
@@ -72,7 +73,8 @@ But it's equivalent to say:
 old_d = {'one': 1,'two': 2}
 new_d = {key: old_d[key] for key in old_d}
 ```
-See how similar this is to the list comprehension? Instead of taking what we're appending and putting it first, we supply the mapping first (`key: value`). So since we were putting `key` into `new_d` with the value from `old_d`, it shows that in this case, the format is `{key that goes in new dict: value from something for key in old dict}`. We'll use this in a very standard way for question 2.    
+See how similar this is to the list comprehension? Instead of taking what we're appending and putting it first, we supply the mapping first (`key: value`). So since we were putting `key` into `new_d` with the value from `old_d`, it shows that in this case, the format is `{key that goes in new dict: value from something for key in old dict}`. We'll use this in a very standard way for question 2.  
+
 Question 2 says to build a dictionary in one line that contains the max scores for each class. In a way, we've already done a lot of the groundwork in Q1! In Q1, we build a list of all the max scores, and get the max out of that. So we know how to get the max score for a specific class, which is `max(gradebooks[course].values())` Now, instead of building a list, we'll build a dictionary, and map the course to that value. Let's do it the normal way first:
 ```python
 max_score_dict = {}
